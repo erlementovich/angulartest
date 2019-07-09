@@ -1,0 +1,16 @@
+{
+  "name": "angulartest",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Artem <Erlementovich@yandex.ru>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/erlementovich/angulartest",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libs"
+  ]
+}

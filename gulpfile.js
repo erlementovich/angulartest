@@ -34,7 +34,7 @@ gulp.task('clean', function (cb) {
 
 //перетащим html файлы в dist
 gulp.task('html', function () {
-    return gulp.src(['!app/template/components/*.html', 'app/template/*.html'])
+    return gulp.src('app/*.html')
         .pipe(plumber())
         .pipe(rigger())
         .pipe(gulp.dest('dist'))
@@ -57,7 +57,7 @@ gulp.task('sass', function () {
 
 // js
 gulp.task('js', function () {
-    return gulp.src(['!app/js/components/*.js', 'app/js/main.js'])
+    return gulp.src('app/js/main.js')
         .pipe(plumber())
         .pipe(rigger())
         .pipe(sourcemaps.init())
@@ -68,23 +68,6 @@ gulp.task('js', function () {
 });
 //**** ****//
 
-//json
-gulp.task('json', function () {
-    return gulp.src('app/json/*.json')
-        .pipe(plumber())
-        .pipe(gulp.dest('dist/json'))
-        .pipe(browserSync.stream());
-});
-//**** ****//
-
-//images
-gulp.task('image', function () {
-    return gulp.src('app/img/*.*')
-        .pipe(plumber())
-        .pipe(gulp.dest('dist/img'))
-        .pipe(browserSync.stream());
-});
-
 
 //**** ****//
 
@@ -92,19 +75,17 @@ gulp.task('image', function () {
 gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', gulp.parallel('sass'));
     gulp.watch('app/js/**/*.js', gulp.parallel('js'));
-    gulp.watch('app/**/*.html', gulp.parallel('html'));
-    gulp.watch('app/img/**/*.*', gulp.parallel('image'));
-    gulp.watch('app/json/*.json', gulp.parallel('json'));
+    gulp.watch('app/*.html', gulp.parallel('html'));
 });
 //**** ****//
 
 
 //Построим проект
-gulp.task('build', gulp.series('clean', gulp.parallel('sass', 'js', 'html', 'image', 'json')));
+gulp.task('build', gulp.series('clean', gulp.parallel('sass', 'js', 'html')));
 //**** ****//
 
 
 
 //Построим, запустим и будем смотреть
-gulp.task('default', gulp.parallel('json','html', 'sass', 'js', 'image', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('html', 'sass', 'js', 'browser-sync', 'watch'));
 //**** ****//
