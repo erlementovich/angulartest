@@ -1,3 +1,4 @@
 //= ../../libs/angular/angular.min.js
 //= module.js
-//= controllers/selectController.js
+//= controllers/itemController.js
+

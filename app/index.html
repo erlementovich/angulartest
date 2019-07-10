@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="myApp">
+<html ng-app="App">
 
 <head>
     <meta charset="utf-8">
@@ -9,81 +9,86 @@
 <body>
     <div class="wrapper">
         <div class="background">
-            <div class="blocks">
+            <div ng-controller="itemController" class="blocks">
                 <div class="block1">
                     <h1>SHOP</h1>
                     <div class="form">
                         <div class="select">
+
                             <label>Helmet</label>
-                            <select>
-                                <option>Value1</option>
+                            <select ng-change="change()" ng-model="selectedHelmets"
+                                ng-options="x.name for x in equipment.helmets">
                             </select>
                         </div>
                         <div class="select">
                             <label>Chest</label>
-                            <select>
-                                <option>Value1</option>
+                            <select ng-model="selectedChests" ng-options="x.name for x in equipment.chests">
                             </select>
                         </div>
                         <div class="select">
                             <label>Gloves</label>
-                            <select>
-                                <option>Value1</option>
+                            <select ng-model="selectedGloves" ng-options="x.name for x in equipment.gloves">
                             </select>
                         </div>
                         <div class="select">
                             <label>Boots</label>
-                            <select>
-                                <option>Value1</option>
+                            <select ng-model="selectedBoots" ng-options="x.name for x in equipment.boots">
                             </select>
                         </div>
                         <div class="select">
                             <label>Sword</label>
-                            <select>
-                                <option>Value1</option>
+                            <select ng-model="selectedSwords" ng-options="x.name for x in equipment.swords">
                             </select>
                         </div>
 
                     </div>
                     <div class="line"></div>
                     <div class="cost">
-                        <p>Equiepment cost: </p>
+                        <p>Equiepment cost:
+                            {{ +selectedHelmets.price + +selectedChests.price + +selectedGloves.price + +selectedBoots.price + +selectedSwords.price}}
+                        </p>
                     </div>
 
                 </div>
                 <div class="block2">
                     <div class="persone">
-                        <div class="persone-picture">
+                        <div style="background-image: url({{person.img}})" class="persone-picture">
                             <div class="picture-Helmet">
-                                <img src="http://test.datalb.ru/assets/Helmet-1.png" alt="">
+                                <img src="{{selectedHelmets.img}}" alt="">
                             </div>
                             <div class="picture-Chest">
-                                <img src="http://test.datalb.ru/assets/Chest-2.png" alt="">
+                                <img src="{{selectedChests.img}}" alt="">
                             </div>
                             <div class="picture-Gloves">
-                                <img src="http://test.datalb.ru/assets/Gloves-1.png" alt="">
+                                <img src="{{selectedGloves.img}}" alt="">
                             </div>
 
                             <div class="picture-Boots">
-                                <img src="http://test.datalb.ru/assets/Boots-1.png" alt="">
+                                <img src="{{selectedBoots.img}}" alt="">
                             </div>
                             <div class="picture-Sword">
-                                <img src="http://test.datalb.ru/assets/Sword-1.png" alt="">
+                                <img src="{{selectedSwords.img}}" alt="">
                             </div>
 
                         </div>
                         <div class="persone-stats">
                             <div class="hero-name">
                                 <label>Name:</label>
-                                <label class="persone-name">Hero</label>
+                                <label class="persone-name">{{person.name}}</label>
                             </div>
 
                             <div class="hero-stats">
                                 <label for="">Stats:</label>
                                 <ul class="stats-value">
-                                    <li class="health-stats">100</li>
-                                    <li class="armor-stats">2</li>
-                                    <li class="attack-stats">3</li>
+                                    <li class="health-stats">
+                                        {{+person.health + +selectedHelmets.health + +selectedChests.health + +selectedGloves.health++selectedBoots.health + +selectedSwords.health}}
+                                    </li>
+                                    <li class="armor-stats">
+                                        {{+person.armor + +selectedHelmets.armor + +selectedChests.armor + +selectedGloves.armor++selectedBoots.armor + +selectedSwords.armor}}
+                                    </li>
+                                    <li class="attack-stats">
+                                        {{+person.attack + +selectedHelmets.attack + +selectedChests.attack + +selectedGloves.attack++selectedBoots.attack + +selectedSwords.attack}}
+                                    </li>
                                 </ul>
                                 <div class="hero-icons">
                                     <img id="health" src="img/health.svg" alt="health">

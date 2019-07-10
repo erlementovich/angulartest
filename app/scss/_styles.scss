@@ -55,15 +55,28 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.select:last-child {
+  margin-bottom: 25px;
+}
 select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  background: url("img/arrow.svg");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 93%;
+  border:1px solid #727272;
   margin-right: 50px;
   width: 190px;
   height: 36px;
   border-radius: 4px;
+  padding-left: 10px;
 }
 .line {
   margin: auto;
-  margin-bottom: 25px;
+  margin-bottom: 34px;
   width: 270px;
   border: 1px solid #727272;
 }
@@ -81,21 +94,20 @@ select {
   margin: auto;
   margin-top: 41px;
   margin-bottom: 36px;
-  background-image: url(http://test.datalb.ru/assets/Dude-2.png);
 }
 .persone-stats {
   margin-left: 80px;
   .persone-name {
-    margin-left: 38px;
+    margin-left: 34px;
   }
 }
 .stats-value {
   margin-right: 23px;
-  margin-left: 45px;
+  margin-left: 43px;
 }
 li {
   list-style-type: none;
-  margin-bottom: 12px;
+  margin-bottom: 11px;
   padding: 0;
 }
 ul {
@@ -111,10 +123,10 @@ ul {
 }
 //svg
 #health {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 #armor {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .hero-name {

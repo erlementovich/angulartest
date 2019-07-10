@@ -71,6 +71,13 @@ gulp.task('img', function () {
         .pipe(browserSync.stream());
 });
 
+
+gulp.task('json', function () {
+    return gulp.src('app/json/*.*')
+        .pipe(plumber())
+        .pipe(gulp.dest('dist/json'))
+        .pipe(browserSync.stream());
+});
 //**** ****//
 
 //Будем следить за файлами
@@ -79,16 +86,17 @@ gulp.task('watch', function () {
     gulp.watch('app/img/*.*', gulp.parallel('img'));
     gulp.watch('app/js/**/*.js', gulp.parallel('js'));
     gulp.watch('app/*.html', gulp.parallel('html'));
+    gulp.watch('app/json/*.*', gulp.parallel('json'));
 });
 //**** ****//
 
 
 //Построим проект
-gulp.task('build', gulp.series('clean', gulp.parallel('sass', 'js', 'html','img')));
+gulp.task('build', gulp.series('clean', gulp.parallel('json', 'sass', 'js', 'html', 'img')));
 //**** ****//
 
 
 
 //Построим, запустим и будем смотреть
-gulp.task('default', gulp.parallel('img','html', 'sass', 'js', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('json', 'img', 'html', 'sass', 'js', 'browser-sync', 'watch'));
 //**** ****//
