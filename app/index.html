@@ -1,15 +1,103 @@
-<!DOCTYPE html>
-<html ng-app>
+<!doctype html>
+<html ng-app="myApp">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
+    <div class="wrapper">
+        <div class="background">
+            <div class="blocks">
+                <div class="block1">
+                    <h1>SHOP</h1>
+                    <div class="form">
+                        <div class="select">
+                            <label>Helmet</label>
+                            <select>
+                                <option>Value1</option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Chest</label>
+                            <select>
+                                <option>Value1</option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Gloves</label>
+                            <select>
+                                <option>Value1</option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Boots</label>
+                            <select>
+                                <option>Value1</option>
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Sword</label>
+                            <select>
+                                <option>Value1</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="line"></div>
+                    <div class="cost">
+                        <p>Equiepment cost: </p>
+                    </div>
+
+                </div>
+                <div class="block2">
+                    <div class="persone">
+                        <div class="persone-picture">
+                            <div class="picture-Helmet">
+                                <img src="http://test.datalb.ru/assets/Helmet-1.png" alt="">
+                            </div>
+                            <div class="picture-Chest">
+                                <img src="http://test.datalb.ru/assets/Chest-2.png" alt="">
+                            </div>
+                            <div class="picture-Gloves">
+                                <img src="http://test.datalb.ru/assets/Gloves-1.png" alt="">
+                            </div>
+
+                            <div class="picture-Boots">
+                                <img src="http://test.datalb.ru/assets/Boots-1.png" alt="">
+                            </div>
+                            <div class="picture-Sword">
+                                <img src="http://test.datalb.ru/assets/Sword-1.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="persone-stats">
+                            <div class="hero-name">
+                                <label>Name:</label>
+                                <label class="persone-name">Hero</label>
+                            </div>
+
+                            <div class="hero-stats">
+                                <label for="">Stats:</label>
+                                <ul class="stats-value">
+                                    <li class="health-stats">100</li>
+                                    <li class="armor-stats">2</li>
+                                    <li class="attack-stats">3</li>
+                                </ul>
+                                <div class="hero-icons">
+                                    <img id="health" src="img/health.svg" alt="health">
+                                    <img id="armor" src="img/armor.svg" alt="armor">
+                                    <img id="attack" src="img/attack.svg" alt="attack">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="main.js"></script>

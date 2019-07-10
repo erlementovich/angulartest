@@ -46,10 +46,8 @@ gulp.task('html', function () {
 gulp.task('sass', function () {
     return gulp.src('app/scss/main.scss')
         .pipe(plumber())
-        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(mincss())
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 });
@@ -60,20 +58,25 @@ gulp.task('js', function () {
     return gulp.src('app/js/main.js')
         .pipe(plumber())
         .pipe(rigger())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 });
 //**** ****//
 
 
+gulp.task('img', function () {
+    return gulp.src('app/img/*.*')
+        .pipe(plumber())
+        .pipe(gulp.dest('dist/img'))
+        .pipe(browserSync.stream());
+});
+
 //**** ****//
 
 //Будем следить за файлами
 gulp.task('watch', function () {
     gulp.watch('app/scss/**/*.scss', gulp.parallel('sass'));
+    gulp.watch('app/img/*.*', gulp.parallel('img'));
     gulp.watch('app/js/**/*.js', gulp.parallel('js'));
     gulp.watch('app/*.html', gulp.parallel('html'));
 });
@@ -81,11 +84,11 @@ gulp.task('watch', function () {
 
 
 //Построим проект
-gulp.task('build', gulp.series('clean', gulp.parallel('sass', 'js', 'html')));
+gulp.task('build', gulp.series('clean', gulp.parallel('sass', 'js', 'html','img')));
 //**** ****//
 
 
 
 //Построим, запустим и будем смотреть
-gulp.task('default', gulp.parallel('html', 'sass', 'js', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('img','html', 'sass', 'js', 'browser-sync', 'watch'));
 //**** ****//

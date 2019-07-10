@@ -1,0 +1,163 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  background: #222;
+  width: 100%;
+}
+
+.background {
+  margin: auto;
+  background: #1c6565;
+  width: 1024px;
+  height: 768px;
+}
+
+.blocks {
+  position: relative;
+  top: 84px;
+  margin: 0;
+}
+
+.block1,
+.block2 {
+  float: left;
+  display: inline-block;
+  background: #f9e78e;
+  width: 370px;
+  height: 551px;
+  border-radius: 4px;
+}
+
+.block1 {
+  h1 {
+    margin-top: 27px;
+    margin-bottom: 38px;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    font-weight: 700;
+  }
+  margin-left: 127px;
+}
+.block2 {
+  margin-right: 127px;
+  margin-left: 30px;
+}
+.select {
+  margin-bottom: 20px;
+  label {
+    margin: 0;
+    margin-left: 50px;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+select {
+  margin-right: 50px;
+  width: 190px;
+  height: 36px;
+  border-radius: 4px;
+}
+.line {
+  margin: auto;
+  margin-bottom: 25px;
+  width: 270px;
+  border: 1px solid #727272;
+}
+.cost {
+  margin: auto;
+  width: 270px;
+}
+
+.persone-picture {
+  div {
+    margin: 0;
+  }
+  width: 135px;
+  height: 317px;
+  margin: auto;
+  margin-top: 41px;
+  margin-bottom: 36px;
+  background-image: url(http://test.datalb.ru/assets/Dude-2.png);
+}
+.persone-stats {
+  margin-left: 80px;
+  .persone-name {
+    margin-left: 38px;
+  }
+}
+.stats-value {
+  margin-right: 23px;
+  margin-left: 45px;
+}
+li {
+  list-style-type: none;
+  margin-bottom: 12px;
+  padding: 0;
+}
+ul {
+  padding: 0;
+}
+.hero-stats {
+  display: flex;
+}
+
+.hero-icons {
+  display: flex;
+  flex-direction: column;
+}
+//svg
+#health {
+  margin-bottom: 12px;
+}
+#armor {
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  margin-bottom: 20px;
+  label {
+    margin-bottom: 0;
+  }
+}
+
+.picture-Helmet {
+  height: 84px;
+  img {
+    margin-left: 13px;
+    margin-top: 8px;
+  }
+}
+.picture-Chest {
+  height: 102px;
+  img {
+    margin-top: 1px;
+    margin-left: 20px;
+  }
+}
+.picture-Gloves {
+  height: 104px;
+  img {
+    position: relative;
+    bottom: 33px;
+    right: 31px;
+  }
+}
+.picture-Sword {
+  height: 112px;
+  img {
+    position: relative;
+    bottom: 160px;
+    right: 118px;
+  }
+}
+.picture-Boots {
+  height: 73px;
+  img {
+    position: relative;
+    bottom: 35px;
+  }
+}
