@@ -1,0 +1,111 @@
+<!doctype html>
+<html ng-app="App">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="background">
+            <div ng-controller="itemController" class="blocks">
+                <div class="block1">
+                    <h1>SHOP</h1>
+                    <div class="form">
+                        <div class="select">
+
+                            <label>Helmet</label>
+                            <select ng-change="change()" ng-model="selectedHelmets"
+                                ng-options="x.name for x in equipment.helmets">
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Chest</label>
+                            <select ng-model="selectedChests" ng-options="x.name for x in equipment.chests">
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Gloves</label>
+                            <select ng-model="selectedGloves" ng-options="x.name for x in equipment.gloves">
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Boots</label>
+                            <select ng-model="selectedBoots" ng-options="x.name for x in equipment.boots">
+                            </select>
+                        </div>
+                        <div class="select">
+                            <label>Sword</label>
+                            <select ng-model="selectedSwords" ng-options="x.name for x in equipment.swords">
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="line"></div>
+                    <div class="cost">
+                        <p>Equiepment cost:
+                            {{ +selectedHelmets.price + +selectedChests.price + +selectedGloves.price + +selectedBoots.price + +selectedSwords.price}}
+                        </p>
+                    </div>
+
+                </div>
+                <div class="block2">
+                    <div class="persone">
+                        <div style="background-image: url({{person.img}})" class="persone-picture">
+                            <div class="picture-Helmet">
+                                <img src="{{selectedHelmets.img}}" alt="">
+                            </div>
+                            <div class="picture-Chest">
+                                <img src="{{selectedChests.img}}" alt="">
+                            </div>
+                            <div class="picture-Gloves">
+                                <img src="{{selectedGloves.img}}" alt="">
+                            </div>
+
+                            <div class="picture-Boots">
+                                <img src="{{selectedBoots.img}}" alt="">
+                            </div>
+                            <div class="picture-Sword">
+                                <img src="{{selectedSwords.img}}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="persone-stats">
+                            <div class="hero-name">
+                                <label>Name:</label>
+                                <label class="persone-name">{{person.name}}</label>
+                            </div>
+
+                            <div class="hero-stats">
+                                <label for="">Stats:</label>
+                                <ul class="stats-value">
+                                    <li class="health-stats">
+                                        {{+person.health + +selectedHelmets.health + +selectedChests.health + +selectedGloves.health++selectedBoots.health + +selectedSwords.health}}
+                                    </li>
+                                    <li class="armor-stats">
+                                        {{+person.armor + +selectedHelmets.armor + +selectedChests.armor + +selectedGloves.armor++selectedBoots.armor + +selectedSwords.armor}}
+                                    </li>
+                                    <li class="attack-stats">
+                                        {{+person.attack + +selectedHelmets.attack + +selectedChests.attack + +selectedGloves.attack++selectedBoots.attack + +selectedSwords.attack}}
+                                    </li>
+                                </ul>
+                                <div class="hero-icons">
+                                    <img id="health" src="img/health.svg" alt="health">
+                                    <img id="armor" src="img/armor.svg" alt="armor">
+                                    <img id="attack" src="img/attack.svg" alt="attack">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
